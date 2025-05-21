@@ -57,10 +57,10 @@ resource "aws_instance" "nginx_region1" {
 
   user_data = <<-EOF
               #!/bin/bash
-              yum update -y
-              amazon-linux-extras install nginx1 -y
-              systemctl start nginx
-              systemctl enable nginx
+              sudo yum update -y
+              sudo yum install nginx -y
+              sudo systemctl start nginx
+              sudo systemctl enable nginx
               EOF
 
   tags = {
@@ -77,10 +77,10 @@ resource "aws_instance" "nginx_region2" {
 
   user_data = <<-EOF
               #!/bin/bash
-              yum update -y
-              amazon-linux-extras install nginx1 -y
-              systemctl start nginx
-              systemctl enable nginx
+              sudo yum update -y
+              sudo yum install nginx -y
+              sudo systemctl start nginx
+              sudo systemctl enable nginx
               EOF
 
   tags = {
